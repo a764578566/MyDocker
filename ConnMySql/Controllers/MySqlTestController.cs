@@ -55,7 +55,7 @@ namespace ConnMySql.Controllers
             using (MySqlConnection con = new MySqlConnection("server=127.0.0.1;database=test;uid=root;pwd=123456;"))
             {
                 con.Open();
-                string sql = "insert into Mytable(name,age,content) values('zhou','25','http://www.cnblogs.com/chengxuzhimei')";
+                string sql = $"insert into Mytable(name,age,content) values('{value}','25','http://www.cnblogs.com/chengxuzhimei')";
                 using (MySqlCommand com = new MySqlCommand(sql, con))
                 {
                     i = com.ExecuteNonQuery();
